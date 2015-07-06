@@ -1,0 +1,17 @@
+{
+  "name": "nlp",
+  "version": "1.0.0",
+  "description": "nlp for snail",
+  "main": "index.js",
+  "dependencies": {
+    "firebase": "^2.2.7",
+    "twtkrjs": "0.0.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chitacan",
+  "license": "MIT"
+}
