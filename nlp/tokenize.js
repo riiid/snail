@@ -1,8 +1,14 @@
 var TKT = require('twtkrjs');
 var _   = require('underscore');
-
 var FB = require('firebase');
-var root = new FB('https://renote-info.firebaseio.com/playstore');
+var url = process.argv[2];
+
+if (!url) {
+  console.error('No firebase url. exit.');
+  return process.exit();
+}
+
+var root = new FB(url);
 
 var processor = new TKT({
   stemmer: false,
