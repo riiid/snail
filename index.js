@@ -86,6 +86,7 @@ var processReview = function() {
 }
 casper.start(URL, function() {
   this.echo('🐌 ...', 'INFO');
+  this.echo('Target : ' + PACKAGE, 'INFO');
   this.page.onCallback = function(info) {
     if (info.state == 'count')
       casper.echo('Processing reviews : ' + info.count, 'INFO');
