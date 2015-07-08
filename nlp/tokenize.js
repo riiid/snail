@@ -25,14 +25,19 @@ reviewsRef.once('value', function(snap) {
   var values = _.values(snap.val());
   values.map(function(value) {
     processor.tokenize(value.content, function(err, result) {
-      count++;
+      count +=1;
+      console.log('tokenized ' + count);
       result = result.map(function(item) {
         item.parent = value.reviewId;
         return item;
       });
       tokens[value.reviewId] = result;
-      if (count == values.length)
-        tokensRef.update(tokens);
+      if (count == values.length) {
+        tokensRef.update(tokens, function() {
+          console.log('Finished');
+          process.exit();
+        });
+      }
     });
   });
 });
