@@ -18,6 +18,11 @@ $ docker build -t chitacan/snail .
 $ docker run -it --rm chitacan/snail --package=<YOUR_APP_PACKAGE> --fetch-all --fb-root='https://<YOUR_FIREBASE_APP>.firebaseio.com'
 ```
 
-## Visualize?
+## Analysis
 
-[Example 1](http://codepen.io/chitacan/full/XbZgEx/)
+see [nlp/README.md](https://github.com/riiid/snail/blob/master/nlp/README.md)
+
+## Visualize
+
+[Example 1](http://codepen.io/chitacan/full/XbZgEx/) : Explore every user review by date.
+[Example 2](http://codepen.io/chitacan/full/oXqKoX/) : Explore most mentioned noun in user review.
