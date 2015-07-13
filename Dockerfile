@@ -1,7 +1,7 @@
 FROM fprieur/docker-casperjs
 MAINTAINER kyung yeol kim <kykim@riiid.co>
 
-LABEL version="0.0.1"
+LABEL version="0.0.2"
 
 ADD *.js /src/snail/
 ADD bower_components/firebase/firebase.js /src/snail/
