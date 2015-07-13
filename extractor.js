@@ -5,7 +5,12 @@
   var FETCH_ALL = true;
 
   function init() {
+    var gen = new FirebaseTokenGenerator(w.firebase_secret);
+    var token = gen.createToken({ uid:'0', snail:true });
     ref = new Firebase(w.firebase_root);
+    ref.authWithCustomToken(token, function(err, auth) {
+      if (err) console.log(err);
+    });
   }
 
   function details() {

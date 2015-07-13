@@ -6,6 +6,8 @@ Experimental scripts for NLP (Natural Language Processing)
 
 ```
 $ npm install
-$ node tokenize.js https://<YOUR_FIREBASE_APP>.firebaseio.com/playstore
-$ node word_count.js https://<YOUR_FIREBASE_APP>.firebaseio.com/playstore
+$ export FIREBASE_URL=https://<YOUR_FIREBASE_APP>.firebaseio.com/playstore
+$ export FIREBASE_SECRET=<YOUR_FIREBASE_SECRET>
+$ node tokenize.js
+$ node word_count.js
 ```

@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "firebase": "^2.2.7",
+    "firebase-token-generator": "^2.0.0",
     "twtkrjs": "0.0.1",
     "underscore": "^1.8.3"
   },

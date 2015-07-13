@@ -5,6 +5,7 @@ LABEL version="0.0.1"
 
 ADD *.js /src/snail/
 ADD bower_components/firebase/firebase.js /src/snail/
+ADD bower_components/firebase-token-generator/dist/firebase-token-generator.js /src/snail/
 ADD bower_components/moment/moment.js /src/snail/
 
 ENTRYPOINT ["casperjs", "/src/snail/index.js"]

@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "firebase": "~2.2.7",
-    "moment": "~2.10.3"
+    "moment": "~2.10.3",
+    "firebase-token-generator": "~2.0.0"
   }
 }

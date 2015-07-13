@@ -15,6 +15,7 @@ var child  = require('child_process');
 var casper = require('casper').create({
   clientScripts: [
     '/src/snail/firebase.js',
+    '/src/snail/firebase-token-generator.js',
     '/src/snail/moment.js',
     '/src/snail/extractor.js'
   ],
@@ -26,9 +27,10 @@ var casper = require('casper').create({
 });
 
 // handle cli options
-var PACKAGE        = casper.cli.get('package')   || 'co.riiid.renote';
-var INIT_FETCH_ALL = casper.cli.get('fetch-all') || false
-var FIREBASE_ROOT  = casper.cli.get('fb-root')   || 'https://renote-info.firebaseio.com/playstore'
+var PACKAGE         = casper.cli.get('package')   || 'co.riiid.renote';
+var INIT_FETCH_ALL  = casper.cli.get('fetch-all') || false
+var FIREBASE_ROOT   = casper.cli.get('fb-root')   || 'https://renote-info.firebaseio.com/playstore'
+var FIREBASE_SECRET = casper.cli.get('fb-secret') || ''
 
 var BASE_URL = "https://play.google.com/store/apps/details?id=";
 var URL      = BASE_URL.concat(PACKAGE);
@@ -101,10 +103,11 @@ casper.start(URL, function() {
 casper.then(isCaptchaPage);
 casper.then(login);
 casper.then(function() {
-  this.evaluate(function(fb) {
-    window.firebase_root = fb;
+  this.evaluate(function(secret, fb) {
+    window.firebase_secret = secret;
+    window.firebase_root   = fb;
     window.init();
-  }, FIREBASE_ROOT);
+  }, FIREBASE_SECRET, FIREBASE_ROOT);
 })
 casper.then(processDetailSection);
 casper.then(processRate);
