@@ -4,8 +4,6 @@ MAINTAINER kyung yeol kim <kykim@riiid.co>
 LABEL version="0.0.2"
 
 ADD *.js /src/snail/
-ADD bower_components/firebase/firebase.js /src/snail/
-ADD bower_components/firebase-token-generator/dist/firebase-token-generator.js /src/snail/
-ADD bower_components/moment/moment.js /src/snail/
+ADD deps/*.js /src/snail/
 
 ENTRYPOINT ["casperjs", "/src/snail/index.js"]

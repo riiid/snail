@@ -12,10 +12,8 @@ $ docker build -t chitacan/snail .
 
 ## Run
 
-> This project is not registered on Docker Hub yet. You should build an image on your machine before run following command.
-
 ```
-$ docker run -it --rm chitacan/snail --package=<YOUR_APP_PACKAGE> --fetch-all --fb-root='https://<YOUR_FIREBASE_APP>.firebaseio.com --fb-secret=<YOUR_FIREBASE_SECRET>'
+$ docker run -it --rm riiid/snail --package=<YOUR_APP_PACKAGE> --fetch-all --fb-root='https://<YOUR_FIREBASE_APP>.firebaseio.com --fb-secret=<YOUR_FIREBASE_SECRET>'
 ```
 
 ## Analysis
