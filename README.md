@@ -7,7 +7,7 @@ Extract application info(user review, rate etc) from [Google play](https://play.
 
 ```
 $ bower install
-$ docker build -t chitacan/snail .
+$ docker build -t riiid/snail .
 ```
 
 ## Run
