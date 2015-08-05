@@ -115,5 +115,11 @@ casper.then(processFeatured);
 casper.then(processReview);
 casper.on("page.error", function(msg, trace) {
   this.echo("Error: " + msg, "ERROR");
+  this.echo("file:     " + trace[0].file, "ERROR");
+  this.echo("line:     " + trace[0].line, "ERROR");
+  this.echo("function: " + trace[0]["function"], "ERROR");
+});
+casper.on('remote.message', function(message) {
+      this.echo(message);
 });
 casper.run(function() {});
