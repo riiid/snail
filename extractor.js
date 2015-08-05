@@ -86,11 +86,12 @@
         result.author    = authorInfo.textContent.trim();
         result.storepage = authorInfo.href;
       }
+      review.querySelector('.review-link').innerHTML = '';
       result.rating    = review.querySelector('.current-rating').style.width;
       result.date      = review.querySelector('.review-date').textContent;
       result.date_unix = moment(result.date, 'YYYY MM DD').unix() * 1000
       result.title     = review.querySelector('.review-title').textContent.trim();
-      result.content   = review.querySelector('.review-body').innerText;
+      result.content   = review.querySelector('.review-body').textContent.trim();
       result.reviewId  = review.querySelector('.review-header').dataset.reviewid;
       result.type      = review.classList[0];
       return result;
@@ -151,7 +152,7 @@
         w.callPhantom({ state: 'finish', count: reviews.length });
       }
     }
-    fireClickEvent(d.querySelector('div[data-dropdown-value="0"]'));
+    fireClickEvent(d.querySelector('button[data-dropdown-value="0"]'));
     w.setTimeout(looper, LOOP_DELAY);
   }
   function toObj(list, key) {
